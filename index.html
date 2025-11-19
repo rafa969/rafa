@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafa Aditiya - Survival Portfolio (Akuntansi)</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Set default font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'base-dark': '#1C1C1C', // Latar belakang gelap, kuat
+                        'accent-orange': '#FF8C00', // Oranye Dominan (Dark Orange)
+                        'secondary-dark': '#2D2D2D', // Untuk kartu/elemen
+                        'text-light': '#EAEAEA',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for the survival/rugged look */
+        .survival-border {
+            border: 2px solid #FF8C00; /* Border oranye */
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.5); /* Glowing effect */
+        }
+        .survival-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.7);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #FF8C00;
+            margin-top: 8px;
+            border-radius: 9999px;
+        }
+        /* Style for the 'A' in the name for a strong visual anchor */
+        .logo-text span:first-child {
+            color: #FF8C00;
+            font-size: 1.25em;
+            font-weight: 800;
+        }
+    </style>
+    <!-- Phosphor Icons for a clean, modern look -->
+    <script src="https://unpkg.com/phosphor-icons"></script>
+</head>
+<body class="bg-base-dark text-text-light font-sans min-h-screen">
+
+    <!-- NAVIGATION (Pusat Komando) -->
+    <header class="sticky top-0 z-50 bg-secondary-dark/95 backdrop-blur-sm shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo / Judul -->
+            <div class="logo-text text-2xl font-bold tracking-wider">
+                <span class="text-accent-orange">R</span>AFA <span class="text-text-light">ADITIYA</span>
+            </div>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#basecamp" class="hover:text-accent-orange transition duration-200">BASECAMP</a>
+                <a href="#field-report" class="hover:text-accent-orange transition duration-200">FIELD REPORT</a>
+                <a href="#training-log" class="hover:text-accent-orange transition duration-200">TRAINING LOG</a>
+                <a href="#toolkit" class="hover:text-accent-orange transition duration-200">TOOLKIT</a>
+                <a href="#radio-call" class="hover:text-accent-orange transition duration-200">RADIO CALL</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-text-light p-2 rounded-lg hover:bg-base-dark transition duration-200">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-base-dark/95 backdrop-blur-md p-6">
+        <div class="text-right">
+            <button id="close-mobile-menu-btn" class="text-text-light p-2 rounded-lg hover:bg-secondary-dark transition duration-200">
+                <i class="ph ph-x text-3xl"></i>
+            </button>
+        </div>
+        <nav class="mt-8 flex flex-col space-y-4 text-xl font-semibold">
+            <a href="#basecamp" class="p-3 rounded-md hover:bg-secondary-dark text-accent-orange transition duration-200" onclick="closeMenu()">BASECAMP</a>
+            <a href="#field-report" class="p-3 rounded-md hover:bg-secondary-dark transition duration-200" onclick="closeMenu()">FIELD REPORT</a>
+            <a href="#training-log" class="p-3 rounded-md hover:bg-secondary-dark transition duration-200" onclick="closeMenu()">TRAINING LOG</a>
+            <a href="#toolkit" class="p-3 rounded-md hover:bg-secondary-dark transition duration-200" onclick="closeMenu()">TOOLKIT</a>
+            <a href="#radio-call" class="p-3 rounded-md hover:bg-secondary-dark transition duration-200" onclick="closeMenu()">RADIO CALL</a>
+        </nav>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- 1. BASECAMP (HOME) -->
+        <section id="basecamp" class="py-20 lg:py-32 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
+            <div class="lg:w-3/5">
+                <p class="text-lg text-accent-orange font-medium mb-3 tracking-widest">ACCOUNTANT IN TRAINING</p>
+                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight mb-6">
+                    SURVIVAL MODE: <span class="text-accent-orange">READY</span>
+                </h1>
+                <p class="text-text-light text-xl mb-8 max-w-xl">
+                    Saya Rafa Aditiya, pelajar Akuntansi dari SMK Dewi Sartika. Di dunia yang kompetitif, presisi dan perencanaan adalah kunci untuk bertahan. Ini adalah catatan log perjalanan saya.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#toolkit" class="survival-button bg-accent-orange text-base-dark font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg">
+                        LIHAT TOOLKIT SAYA
+                    </a>
+                    <a href="#radio-call" class="survival-button border-2 border-accent-orange text-accent-orange font-bold py-3 px-8 rounded-lg transition duration-300 hover:bg-accent-orange hover:text-base-dark">
+                        KIRIM PESAN
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-2/5">
+                <!-- Placeholder Profil Image with Survival Border -->
+                <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto rounded-full survival-border overflow-hidden">
+                    <img src="https://placehold.co/800x800/2D2D2D/FF8C00?text=Rafa%0AAditiya" alt="Foto Profil Rafa Aditiya" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. FIELD REPORT (ABOUT ME) -->
+        <section id="field-report" class="py-20">
+            <h2 class="section-title text-4xl font-bold mb-10 text-center md:text-left">FIELD REPORT: DATA PERSONAL</h2>
+            <div class="bg-secondary-dark p-8 rounded-xl shadow-2xl survival-border md:flex gap-10">
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-4 leading-relaxed">
+                        Di medan Akuntansi, saya beroperasi dengan prinsip kehati-hatian dan akurasi. Saya percaya bahwa setiap angka adalah koordinat penting yang menentukan keberhasilan sebuah misi.
+                        <br><br>
+                        Akuntansi adalah alat navigasi untuk bisnis, memastikan sumber daya (keuangan) dikelola dengan efisien agar perusahaan dapat bertahan hidup dan berkembang. Saya siap memimpin perencanaan strategis keuangan.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-6 md:mt-0 space-y-4">
+                    <div class="p-4 bg-base-dark rounded-lg">
+                        <p class="text-sm text-accent-orange">IDENTITAS</p>
+                        <p class="text-xl font-semibold">Rafa Aditiya</p>
+                    </div>
+                    <div class="p-4 bg-base-dark rounded-lg">
+                        <p class="text-sm text-accent-orange">STATUS OPERASIONAL</p>
+                        <p class="text-xl font-semibold">Pelajar</p>
+                    </div>
+                    <!-- Survival Traits (Soft Skills Visual) -->
+                    <h3 class="text-text-light font-bold pt-4">SURVIVAL TRAITS</h3>
+                    <div class="space-y-2">
+                        <label class="block text-sm">Ketelitian (Detail-Oriented)</label>
+                        <div class="w-full bg-base-dark rounded-full h-3">
+                            <div class="bg-accent-orange h-3 rounded-full" style="width: 90%;"></div>
+                        </div>
+                        <label class="block text-sm">Manajemen Waktu (Time Management)</label>
+                        <div class="w-full bg-base-dark rounded-full h-3">
+                            <div class="bg-accent-orange h-3 rounded-full" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TRAINING LOG (EDUCATION) -->
+        <section id="training-log" class="py-20">
+            <h2 class="section-title text-4xl font-bold mb-10 text-center md:text-left">TRAINING LOG: PENDIDIKAN</h2>
+            <div class="relative pl-6 md:pl-0">
+                <!-- Timeline Line -->
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-dark md:left-1/2 md:-translate-x-1/2"></div>
+                
+                <!-- Training Entry: SMK Dewi Sartika -->
+                <div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center w-full">
+                    <div class="md:w-5/12 text-left md:text-right p-4 bg-secondary-dark rounded-lg shadow-xl relative survival-border md:mr-10">
+                        <p class="text-accent-orange font-bold text-lg">SMK DEWI SARTIKA</p>
+                        <p class="text-text-light text-sm">TAHUN AKTIF (Placeholder)</p>
+                        <!-- Timeline Dot (for mobile) -->
+                        <div class="absolute top-1/2 -left-8 transform -translate-y-1/2 w-4 h-4 bg-accent-orange rounded-full border-2 border-base-dark md:hidden"></div>
+                    </div>
+                    <div class="hidden md:block w-2 h-2 rounded-full bg-accent-orange absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="md:w-5/12 mt-4 md:mt-0 md:ml-10">
+                        <div class="p-4 bg-secondary-dark rounded-lg shadow-xl relative survival-border">
+                            <p class="font-semibold">Jurusan: Akuntansi</p>
+                            <ul class="list-disc list-inside mt-2 text-sm text-text-light/80">
+                                <li>Mempelajari Dasar-dasar Akuntansi dan Pencatatan Jurnal.</li>
+                                <li>Mahir dalam pengoperasian Ms. Excel untuk kalkulasi keuangan.</li>
+                                <li>Memahami prinsip Audit dan Administrasi Keuangan.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Training Entry: Pendidikan Dasar/Lainnya (Example) -->
+                <div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center w-full md:flex-row-reverse">
+                    <div class="md:w-5/12 text-left md:text-left p-4 bg-secondary-dark rounded-lg shadow-xl relative survival-border md:ml-10">
+                        <p class="text-accent-orange font-bold text-lg">PENDIDIKAN DASAR & MENENGAH</p>
+                        <p class="text-text-light text-sm">TAHUN AKTIF (Placeholder)</p>
+                        <!-- Timeline Dot (for mobile) -->
+                        <div class="absolute top-1/2 -left-8 transform -translate-y-1/2 w-4 h-4 bg-accent-orange rounded-full border-2 border-base-dark md:hidden"></div>
+                    </div>
+                    <div class="hidden md:block w-2 h-2 rounded-full bg-accent-orange absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="md:w-5/12 mt-4 md:mt-0 md:mr-10">
+                        <div class="p-4 bg-secondary-dark rounded-lg shadow-xl relative survival-border">
+                            <p class="font-semibold">Fokus: Pondasi Logika dan Disiplin</p>
+                            <p class="text-sm text-text-light/80 mt-1">Membangun dasar yang kuat dalam disiplin ilmu dan pemecahan masalah.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- 4. TOOLKIT (SKILLS) -->
+        <section id="toolkit" class="py-20">
+            <h2 class="section-title text-4xl font-bold mb-10 text-center md:text-left">MY SURVIVAL TOOLKIT</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- TOOL 1: Microsoft Excel -->
+                <div class="bg-secondary-dark p-6 rounded-xl survival-border flex items-start space-x-4 hover:shadow-accent-orange/50 transition duration-300">
+                    <i class="ph ph-table text-4xl text-accent-orange flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-xl font-bold text-accent-orange">Ms. EXCEL (Kompas Akuntansi)</h3>
+                        <p class="mt-1 text-sm text-text-light/90">Mahir dalam fungsi dasar dan lanjutan untuk analisis data, budgeting, dan pelaporan keuangan.</p>
+                    </div>
+                </div>
+
+                <!-- TOOL 2: Pencatatan Jurnal -->
+                <div class="bg-secondary-dark p-6 rounded-xl survival-border flex items-start space-x-4 hover:shadow-accent-orange/50 transition duration-300">
+                    <i class="ph ph-book-open text-4xl text-accent-orange flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-xl font-bold text-accent-orange">Pencatatan Jurnal (Logbook Harian)</h3>
+                        <p class="mt-1 text-sm text-text-light/90">Memahami alur debit/kredit dan prinsip keseimbangan dalam siklus akuntansi.</p>
+                    </div>
+                </div>
+
+                <!-- TOOL 3: Administrasi Keuangan -->
+                <div class="bg-secondary-dark p-6 rounded-xl survival-border flex items-start space-x-4 hover:shadow-accent-orange/50 transition duration-300">
+                    <i class="ph ph-currency-dollar text-4xl text-accent-orange flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-xl font-bold text-accent-orange">Admin Keuangan (Manajemen Suplai)</h3>
+                        <p class="mt-1 text-sm text-text-light/90">Keterampilan mengelola dokumen dan memastikan kepatuhan prosedur keuangan.</p>
+                    </div>
+                </div>
+
+                <!-- TOOL 4: Problem Solving (Soft Skill) -->
+                <div class="bg-secondary-dark p-6 rounded-xl survival-border flex items-start space-x-4 hover:shadow-accent-orange/50 transition duration-300">
+                    <i class="ph ph-magnifying-glass text-4xl text-accent-orange flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-xl font-bold text-accent-orange">Problem Solving (Deteksi Bahaya)</h3>
+                        <p class="mt-1 text-sm text-text-light/90">Kemampuan mengidentifikasi anomali data dan menemukan solusi yang efisien.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. RADIO CALL (CONTACT) -->
+        <section id="radio-call" class="py-20">
+            <h2 class="section-title text-4xl font-bold mb-10 text-center md:text-left">RADIO CALL: HUBUNGI SAYA</h2>
+            <div class="bg-secondary-dark p-8 rounded-xl shadow-2xl survival-border max-w-2xl mx-auto">
+                <p class="text-center text-lg mb-6">Butuh detail lebih lanjut? Kirimkan sinyal Anda sekarang!</p>
+                <form onsubmit="showContactModal(event)" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-text-light">Nama Pengirim</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full p-3 rounded-lg bg-base-dark border-2 border-accent-orange/50 focus:border-accent-orange focus:ring-accent-orange text-text-light">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-text-light">Frekuensi (Email)</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full p-3 rounded-lg bg-base-dark border-2 border-accent-orange/50 focus:border-accent-orange focus:ring-accent-orange text-text-light">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-text-light">Pesan / Detail Misi</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full p-3 rounded-lg bg-base-dark border-2 border-accent-orange/50 focus:border-accent-orange focus:ring-accent-orange text-text-light"></textarea>
+                    </div>
+                    <button type="submit" class="survival-button w-full bg-accent-orange text-base-dark font-bold py-3 rounded-lg transition duration-300">
+                        KIRIM SINYAL DARURAT
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (LOG PENUTUP) -->
+    <footer class="bg-secondary-dark py-8 mt-12 border-t border-accent-orange/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-text-light/70">
+            <p>&copy; 2024 Rafa Aditiya - Survival Portfolio. All rights reserved.</p>
+            <p class="mt-2">Beroperasi di bawah mode Akuntansi dan Siap Bertahan.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Modal for Contact Form (Replaces alert()) -->
+    <div id="contact-modal" class="fixed inset-0 bg-base-dark/80 backdrop-blur-sm hidden z-50 items-center justify-center p-4" onclick="closeModal()">
+        <div class="bg-secondary-dark p-8 rounded-xl survival-border w-full max-w-sm text-center" onclick="event.stopPropagation()">
+            <i class="ph ph-check-circle text-6xl text-accent-orange mx-auto mb-4"></i>
+            <h3 class="text-2xl font-bold mb-3 text-accent-orange">SINYAL DITERIMA!</h3>
+            <p class="text-text-light">Terima kasih, pesan Anda telah berhasil dikirim. Rafa akan segera membalas komunikasi Anda.</p>
+            <button onclick="closeModal()" class="survival-button bg-accent-orange text-base-dark font-bold py-2 px-6 rounded-lg mt-6 transition duration-300">
+                TUTUP LOG
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT for Interaction -->
+    <script>
+        // --- Modal Functions (Replaces alert/confirm) ---
+        function showContactModal(event) {
+            event.preventDefault(); // Stop form submission for demonstration
+            document.getElementById('contact-modal').classList.remove('hidden');
+            document.getElementById('contact-modal').classList.add('flex');
+            // Clear form fields after "submission"
+            event.target.reset();
+        }
+
+        function closeModal() {
+            document.getElementById('contact-modal').classList.add('hidden');
+            document.getElementById('contact-modal').classList.remove('flex');
+        }
+
+        // --- Mobile Menu Functions ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+        
+        // Function to close menu after clicking a link
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // --- Smooth Scrolling for Navigation ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
